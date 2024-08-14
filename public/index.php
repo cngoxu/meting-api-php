@@ -1,3 +1,11 @@
+<?php
+// 设置API路径
+define('API_URI', api_uri());
+function api_uri() // static
+{
+    return (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . strtok($_SERVER['REQUEST_URI'], '?');
+}
+?>
 <!DOCTYPE html>
 <html>
 
